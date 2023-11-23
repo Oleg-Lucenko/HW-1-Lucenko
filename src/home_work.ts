@@ -10,7 +10,7 @@ class Direction {
   levels: any[] = [];
   _name: string;
 
-  get name() {
+  get name(): string {
     return this._name;
   }
 
@@ -33,11 +33,11 @@ class Level {
     this._program = program;
   }
 
-  get name() {
+  get name(): string {
     return this._name;
   }
 
-  get program() {
+  get program(): string {
     return this._program;
   }
 
@@ -50,8 +50,8 @@ class Group {
   _students : any = [];
   directionName:string;
   levelName:string;
-
-  get students() {
+  
+  get students(): any {
     return this._students;
   }
 
@@ -64,7 +64,7 @@ class Group {
     this._students.push(student);
   }
 
-  showPerformance() {
+  showPerformance(): any[] {
     const sortedStudents = this.students.toSorted(
       (a: any, b: any) => b.getPerformanceRating() - a.getPerformanceRating()
     );
@@ -86,7 +86,7 @@ class Student {
     this.birthYear = birthYear;
   }
 
-  get fullName() {
+  get fullName(): string {
     return `${this.lastName} ${this.firstName}`;
   }
 
@@ -94,7 +94,7 @@ class Student {
     [this.lastName, this.firstName] = value.split(" ");
   }
 
-  get age() {
+  get age(): number {
     return new Date().getFullYear() - this.birthYear;
   }
 
@@ -106,7 +106,7 @@ class Student {
     this.attendance.push(present);
   }
 
-  getPerformanceRating() {
+  getPerformanceRating(): number {
     const gradeValues: any = Object.values(this.grades);
 
     if (gradeValues.length === 0) return 0;
