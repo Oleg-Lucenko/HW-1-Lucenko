@@ -98,7 +98,7 @@ class Student {
     return new Date().getFullYear() - this.birthYear;
   }
 
-  setGrade(subject, grade) {
+  setGrade(subject: string, grade: number) {
     this.grades[subject] = grade;
   }
 
